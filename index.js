@@ -3,13 +3,20 @@
   typeof define === 'function' && define.amd ? define(factory) :
   (global = global || self, global.numberToExcelHeader = factory());
 }(this, (function () { 'use strict';
+
+  const chars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
   function numberToExcelHeader(index) {
-      return index.toString(26).split('')
-        .map(i => String.fromCharCode(i.charCodeAt(0) + (/\d/.test(i) ? 48 : 10)))
-        .join('')
-        .replace(/`/g, 'a')
-        .toUpperCase();
+      index -= 1;
+
+      const quotient = Math.floor(index / 26);
+      if (quotient > 0) {
+          return numberToExcelHeader(quotient) + chars[index % 26];
+      }
+
+      return chars[index % 26];
     }
 
   return numberToExcelHeader;
+
 })));

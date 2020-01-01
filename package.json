@@ -1,6 +1,6 @@
 {
   "name": "number-to-excel-header",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert number to Excel sheet column header",
   "main": "index.js",
   "scripts": {
