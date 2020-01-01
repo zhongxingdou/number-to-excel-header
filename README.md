@@ -10,7 +10,7 @@ import numberToExcelHeader from 'number-to-excel-header'
 
 numberToExcelHeader(1); // A
 numberToExcelHeader(2); // B
-numberToExcelHeader(25); // Z
-numberToExcelHeader(26); // AA
-numberToExcelHeader(52); // BA
+numberToExcelHeader(26); // Z
+numberToExcelHeader(27); // AA
+numberToExcelHeader(53); // BA
 ```
